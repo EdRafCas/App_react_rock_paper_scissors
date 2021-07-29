@@ -1,9 +1,16 @@
 import React from 'react';
-import LandingPage from './Componentes/LandingPage';
+import {Helmet} from 'react-helmet'
+import Header from './Componentes/Header';
 
 function App() {
   return (
-    <LandingPage/>
+    <>
+      <Helmet>
+          <title> Rock paper scissors</title>
+      </Helmet>
+
+      <Header/>
+    </>
   );
 }
 
