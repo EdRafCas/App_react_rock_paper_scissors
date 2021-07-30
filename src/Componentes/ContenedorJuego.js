@@ -6,6 +6,7 @@ import {ReactComponent as Triangulo} from './../images/bg-triangle.svg'
 const ContenedordelJuego = styled.div`
       display:flex;
       width: 100%;
+      min-width:566px;
       border-radius:0.625rem;
       border: 0.25rem solid hsl(217, 16%, 45%);
       justify-content: center;
@@ -16,13 +17,50 @@ const ContenedordelJuego = styled.div`
 
 `
 const FondoTriangulo = styled(Triangulo)`
+      height:auto;
+      position:fixed;
 `
+
+const ContenedorOpcionA= styled.div`
+      position:fixed;
+      width: 10rem;
+      height:10rem;
+      border-radius:50%;
+      border: 0.25rem solid hsl(217, 16%, 45%);
+      z-index:1;
+      margin-top:-15rem;
+      margin-left:-20rem;
+`
+const ContenedorOpcionB= styled.div`
+      position:fixed;
+      width: 10rem;
+      height:10rem;
+      border-radius:50%;
+      border: 0.25rem solid hsl(217, 16%, 45%);
+      z-index:1;
+      margin-top:15rem;
+      margin-left:0rem;
+`
+const ContenedorOpcionC= styled.div`
+      position:fixed;
+      width: 10rem;
+      height:10rem;
+      border-radius:50%;
+      border: 0.25rem solid hsl(217, 16%, 45%);
+      z-index:1;
+      margin-top:-15rem;
+      margin-left:20rem;
+`
+
 
 
 const ContenedorJuego = () => {
       return ( 
             <ContenedordelJuego>
                   <FondoTriangulo/>
+                  <ContenedorOpcionA  />
+                  <ContenedorOpcionB  />
+                  <ContenedorOpcionC  />
             </ContenedordelJuego>
       );
 }
