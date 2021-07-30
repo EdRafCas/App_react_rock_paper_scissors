@@ -1,6 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet'
 import Header from './Componentes/Header';
+import ContenedorJuego from './Componentes/ContenedorJuego';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       </Helmet>
 
       <Header/>
+      <ContenedorJuego/>
     </>
   );
 }
