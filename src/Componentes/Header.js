@@ -6,7 +6,7 @@ import ContenedorContador from '../Elementos/ContenedorContador';
 const ContenedorHeader = styled.div`
       display:flex;
       width: 100%;
-      min-width:566px;
+      min-width:560px;
       border-radius:0.625rem;
       border: 0.25rem solid hsl(217, 16%, 45%);
       justify-content: space-between;
