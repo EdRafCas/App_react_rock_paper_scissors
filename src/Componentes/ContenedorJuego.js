@@ -22,15 +22,28 @@ const FondoTriangulo = styled(Triangulo)`
 `
 
 const ContenedorOpcionA= styled.div`
+      display:flex;
       position:fixed;
+      background: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
       width: 10rem;
       height:10rem;
       border-radius:50%;
-      border: 0.25rem solid hsl(217, 16%, 45%);
+      border: 1px solid hsl(217, 16%, 45%);
+      box-shadow: 0px 7px 0px 0px;
       z-index:1;
       margin-top:-15rem;
       margin-left:-20rem;
 `
+const ContenedorPapel= styled.div`
+      width: 8rem;
+      height:8rem;
+      background: white;
+      box-shadow: 0px -5px inset;
+      border-radius:50%;
+      border: 1px solid hsl(217, 16%, 45%);
+      margin: auto;
+`
+
 const ContenedorOpcionB= styled.div`
       position:fixed;
       width: 10rem;
@@ -58,7 +71,9 @@ const ContenedorJuego = () => {
       return ( 
             <ContenedordelJuego>
                   <FondoTriangulo/>
-                  <ContenedorOpcionA  />
+                        <ContenedorOpcionA>
+                              <ContenedorPapel/>
+                        </ContenedorOpcionA>
                   <ContenedorOpcionB  />
                   <ContenedorOpcionC  />
             </ContenedordelJuego>
