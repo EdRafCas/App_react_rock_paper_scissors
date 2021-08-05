@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg'
+import {ReactComponent as LogoPapel} from './../images/icon-paper.svg'
 
 
 const ContenedordelJuego = styled.div`
@@ -18,7 +19,6 @@ const ContenedordelJuego = styled.div`
 `
 const FondoTriangulo = styled(Triangulo)`
       height:auto;
-      position:fixed;
 `
 
 const ContenedorOpcionA= styled.div`
@@ -29,7 +29,7 @@ const ContenedorOpcionA= styled.div`
       height:10rem;
       border-radius:50%;
       border: 1px solid hsl(217, 16%, 45%);
-      box-shadow: 0px 7px 0px 0px;
+      box-shadow: 0px 7px 0px 0px ;
       z-index:1;
       margin-top:-15rem;
       margin-left:-20rem;
@@ -38,10 +38,18 @@ const ContenedorPapel= styled.div`
       width: 8rem;
       height:8rem;
       background: white;
-      box-shadow: 0px -5px inset;
+      box-shadow: 0px 5px inset;
       border-radius:50%;
       border: 1px solid hsl(217, 16%, 45%);
       margin: auto;
+      display:flex;
+`
+
+const Papel = styled(LogoPapel)`
+      width:59;
+      height:71;
+      margin:auto;
+      
 `
 
 const ContenedorOpcionB= styled.div`
@@ -72,9 +80,17 @@ const ContenedorJuego = () => {
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <ContenedorPapel/>
+                              <ContenedorPapel>
+                                    <Papel 
+                                          width="70"
+                                          height="90"
+                                          viewBox= "1 2 55 65"
+                                    />
+                              </ContenedorPapel>
                         </ContenedorOpcionA>
-                  <ContenedorOpcionB  />
+                  <ContenedorOpcionB>
+
+                  </ContenedorOpcionB>
                   <ContenedorOpcionC  />
             </ContenedordelJuego>
       );
