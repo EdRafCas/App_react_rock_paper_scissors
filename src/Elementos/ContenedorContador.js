@@ -18,13 +18,14 @@ const Contador = styled.p`
       color: hsl(229, 25%, 31%);
       font-size: 3rem;
       font-weight:700;
+      margin:auto;
       `;
 
-const ContenedorContador = () => {
+const ContenedorContador = ({contador, modificarContador}) => {
       return ( 
             <ContenedorPrincipal>
                   <TituloContador>SCORE</TituloContador>
-                  <Contador>15</Contador>
+                  <Contador>{contador}</Contador>
             </ContenedorPrincipal>
        );
 }

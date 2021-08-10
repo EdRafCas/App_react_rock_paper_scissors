@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Logo} from './../images/logo.svg'
 import ContenedorContador from '../Elementos/ContenedorContador';
@@ -20,11 +20,13 @@ const Logotipo = styled(Logo)`
 `
 
 
-const Header = () => {
+const Header = ({contador, modificarContador}) => {
+
+
       return ( 
             <ContenedorHeader>
                   <Logotipo/>
-                  <ContenedorContador/>
+                  <ContenedorContador contador={contador} modificarContador={modificarContador} />
             </ContenedorHeader> 
        );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
@@ -96,25 +96,38 @@ const ContenedorOpcionC= styled.div`
 
 
 
-const ContenedorJuego = () => {
+const ContenedorJuego = ({contador, modificarContador}) => {
+
+      const jugar = () => {
+            modificarContador(contador + 1);
+            console.log(contador)
+      }; 
+
+      
+     
+
+
       return ( 
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <Btn> 
-                                    <Papel                              viewBox="0 0 49 59"
+                              <Btn onClick={ ()=> jugar()}> 
+                                    <Papel                              
+                                          viewBox="0 0 49 59"
                                     />
                               </Btn>
                         </ContenedorOpcionA>
                   <ContenedorOpcionB>
                               <Btn> 
-                                    <Piedra                              viewBox="0 0 49 59"
+                                    <Piedra                              
+                                          viewBox="0 0 49 59"
                                     />
                               </Btn>
                   </ContenedorOpcionB>
                   <ContenedorOpcionC>
                               <Btn> 
-                                    <Tijera                            viewBox="0 0 49 59"
+                                    <Tijera                            
+                                          viewBox="0 0 49 59"
                                     />
                               </Btn>
                   </ContenedorOpcionC>
