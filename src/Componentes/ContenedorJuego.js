@@ -97,10 +97,33 @@ const ContenedorOpcionC= styled.div`
 
 
 const ContenedorJuego = ({contador, modificarContador}) => {
-
+      const [eleccionJugador, cambiarEleccionJugador] = useState("")
+      const opciones = ["piedra", "papel", "tijeras"];
+      
       const jugar = () => {
-            modificarContador(contador + 1);
-            console.log(contador)
+            var seleccionCpu = Math.floor(Math.random() * 3);
+            cambiarEleccionJugador("papel");
+            let resultado;
+
+            switch (eleccionJugador + opciones[seleccionCpu]){
+                        case 'papelpiedra':
+                              modificarContador(contador + 1)
+                              resultado = "ganaste"
+                              console.log(resultado)
+                              break;
+                        case 'papeltijeras':
+                              modificarContador(contador -1)
+                              resultado = "perdiste"
+                              console.log(resultado)
+                              break;
+                        case 'tijerapiedra':
+                              modificarContador(contador -1)
+                              break;
+                        default:
+                              modificarContador(contador +0)
+                              break;
+            }
+            
       }; 
 
       
@@ -111,7 +134,7 @@ const ContenedorJuego = ({contador, modificarContador}) => {
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <Btn onClick={ ()=> jugar()}> 
+                              <Btn onClick={jugar}> 
                                     <Papel                              
                                           viewBox="0 0 49 59"
                                     />
