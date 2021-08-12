@@ -134,7 +134,10 @@ const ContenedorJuego = ({contador, modificarContador}) => {
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <Btn onClick={jugar}> 
+                              <Btn 
+                                    name="botonPapel"
+                                    onClick={jugar}
+                              > 
                                     <Papel                              
                                           viewBox="0 0 49 59"
                                     />
