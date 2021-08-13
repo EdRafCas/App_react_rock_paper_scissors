@@ -2,14 +2,13 @@ import React,{useState} from 'react';
 import {Helmet} from 'react-helmet'
 import Header from './Componentes/Header';
 import ContenedorJuego from './Componentes/ContenedorJuego';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {ContadorJuegoProvider} from './Contextos/ContadorContext';
+import {useContador} from './Contextos/ContadorContext';
 
-function App() {
-  const [contador, modificarContador] = useState(0);
-      
-      /* const ganar = () => {
-            modificarContador(contador + 1);
-            console.log(contador)} */
-      
+function App() {         
+
+  
 
   return (
     <>
@@ -17,9 +16,17 @@ function App() {
           <title> Rock paper scissors</title>
       </Helmet>
 
-
-      <Header contador={contador} modificarContador={modificarContador} />
-      <ContenedorJuego contador={contador} modificarContador={modificarContador}/>
+    <ContadorJuegoProvider>
+        <Header  />
+          <BrowserRouter>
+            <Switch>
+              {/* <ContenedorJuego contador={contador} modificarContador={modificarContador}/> */}
+              <Route path="/"  component={ContenedorJuego} />
+            </Switch>
+          </BrowserRouter>
+    </ContadorJuegoProvider>
+      
+      
     </>
   );
 }

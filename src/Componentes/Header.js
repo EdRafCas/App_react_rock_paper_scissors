@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {ReactComponent as Logo} from './../images/logo.svg'
 import ContenedorContador from '../Elementos/ContenedorContador';
 
+
 const ContenedorHeader = styled.div`
       display:flex;
       width: 100%;
@@ -20,13 +21,13 @@ const Logotipo = styled(Logo)`
 `
 
 
-const Header = ({contador, modificarContador}) => {
-
+const Header = () => {
+      
 
       return ( 
             <ContenedorHeader>
                   <Logotipo/>
-                  <ContenedorContador contador={contador} modificarContador={modificarContador} />
+                  <ContenedorContador  />
             </ContenedorHeader> 
        );
 }

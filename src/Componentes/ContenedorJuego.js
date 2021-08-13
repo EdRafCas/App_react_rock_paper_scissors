@@ -4,6 +4,8 @@ import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
 import {ReactComponent as LogoTijera} from './../images/icon-scissors.svg';
 import {ReactComponent as LogoPiedra} from './../images/icon-rock.svg';
+import {useContador} from './../Contextos/ContadorContext';
+
 
 
 
@@ -53,6 +55,7 @@ const Btn = styled.button`
       cursor:pointer;
       
       svg{
+            pointer-events:none;
             height:50%;
             width:auto;
       }
@@ -62,7 +65,7 @@ const Btn = styled.button`
 
 const Papel = styled(LogoPapel)`      
 `
-const Piedra =styled(LogoPiedra)`
+const Piedra = styled(LogoPiedra)`
 `
 const Tijera = styled(LogoTijera)`
 `
@@ -96,36 +99,79 @@ const ContenedorOpcionC= styled.div`
 
 
 
-const ContenedorJuego = ({contador, modificarContador}) => {
+const ContenedorJuego = () => {
+      const {contador} = useContador();
+      const {modificarContador} = useContador();
+
       const [eleccionJugador, cambiarEleccionJugador] = useState("")
       const opciones = ["piedra", "papel", "tijeras"];
       
-      const jugar = () => {
+      const jugar = (e) => {
             var seleccionCpu = Math.floor(Math.random() * 3);
-            cambiarEleccionJugador("papel");
+            cambiarEleccionJugador(e.target.name);
             let resultado;
+            if(e.target.name === "papel") {
+                  switch (eleccionJugador + opciones[seleccionCpu]){
+                              case 'papelpiedra':
+                                    modificarContador(contador + 1)
+                                    resultado = "ganaste"
+                                    console.log(resultado)
+                                    break;
+                              case 'papeltijeras':
+                                    modificarContador(contador -1)
+                                    resultado = "perdiste"
+                                    console.log(resultado)
+                                    break;
+                              default:
+                                    modificarContador(contador +0)
+                                    resultado = "empate"
+                                    console.log(resultado)
+                                    break;
+                  } 
 
-            switch (eleccionJugador + opciones[seleccionCpu]){
-                        case 'papelpiedra':
-                              modificarContador(contador + 1)
-                              resultado = "ganaste"
-                              console.log(resultado)
-                              break;
-                        case 'papeltijeras':
-                              modificarContador(contador -1)
-                              resultado = "perdiste"
-                              console.log(resultado)
-                              break;
-                        case 'tijerapiedra':
-                              modificarContador(contador -1)
-                              break;
-                        default:
-                              modificarContador(contador +0)
-                              break;
             }
+
+            if(e.target.name === "piedra") {
+                  switch (eleccionJugador + opciones[seleccionCpu]){
+                              case 'piedratijeras':
+                                    modificarContador(contador + 1)
+                                    resultado = "ganaste"
+                                    console.log(resultado)
+                                    break;
+                              case 'piedrapapel':
+                                    modificarContador(contador -1)
+                                    resultado = "perdiste"
+                                    console.log(resultado)
+                                    break;
+                              default:
+                                    modificarContador(contador +0)
+                                    resultado = "empate"
+                                    console.log(resultado)
+                  }      
+            }
+
+            if(e.target.name === "tijeras") {
+                  switch (eleccionJugador + opciones[seleccionCpu]){
+                              case 'tijeraspapel':
+                                    modificarContador(contador + 1)
+                                    resultado = "ganaste"
+                                    console.log(resultado)
+                                    break;
+                              case 'tijeraspiedra':
+                                    modificarContador(contador -1)
+                                    resultado = "perdiste"
+                                    console.log(resultado)
+                                    break;
+                              default:
+                                    modificarContador(contador +0)
+                                    resultado = "empate"
+                                    console.log(resultado)
+                  }      
+            }
+
+            
             
       }; 
-
       
      
 
@@ -135,7 +181,7 @@ const ContenedorJuego = ({contador, modificarContador}) => {
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
                               <Btn 
-                                    name="botonPapel"
+                                    name="papel"
                                     onClick={jugar}
                               > 
                                     <Papel                              
@@ -144,14 +190,21 @@ const ContenedorJuego = ({contador, modificarContador}) => {
                               </Btn>
                         </ContenedorOpcionA>
                   <ContenedorOpcionB>
-                              <Btn> 
-                                    <Piedra                              
+                              <Btn
+                                    name="piedra"
+                                    onClick={jugar}
+                              > 
+                                    <Piedra                         
                                           viewBox="0 0 49 59"
                                     />
                               </Btn>
                   </ContenedorOpcionB>
                   <ContenedorOpcionC>
-                              <Btn> 
+                              <Btn
+                                    name="tijeras"
+                                    onClick={jugar}
+                              
+                              > 
                                     <Tijera                            
                                           viewBox="0 0 49 59"
                                     />
