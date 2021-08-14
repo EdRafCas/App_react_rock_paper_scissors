@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Logo} from './../images/logo.svg'
 import ContenedorContador from '../Elementos/ContenedorContador';

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
-import {useContador} from './../Contextos/ContadorContext';
+import {TotalContadorContext} from './../Contextos/ContadorContext';
 
 const ContenedorPrincipal= styled.div`
       background-color:white;
@@ -23,12 +23,13 @@ const Contador = styled.p`
       `;
 
 const ContenedorContador =  () => {
-      const {contador} = useContador();
+      const {contador} = useContext(TotalContadorContext);
       return ( 
             <ContenedorPrincipal>
                   <TituloContador>SCORE</TituloContador>
                   <Contador>{contador}</Contador>
             </ContenedorPrincipal>
+            
        );
 }
  

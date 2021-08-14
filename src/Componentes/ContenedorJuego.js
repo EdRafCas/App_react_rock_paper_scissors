@@ -1,13 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
 import {ReactComponent as LogoTijera} from './../images/icon-scissors.svg';
 import {ReactComponent as LogoPiedra} from './../images/icon-rock.svg';
-import {useContador} from './../Contextos/ContadorContext';
-
-
-
+import {TotalContadorContext} from './../Contextos/ContadorContext';
 
 const ContenedordelJuego = styled.div`
       display:flex;
@@ -19,7 +17,7 @@ const ContenedordelJuego = styled.div`
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
-      min-height:80%;
+      min-height:70%;
 
 `
 const FondoTriangulo = styled(Triangulo)`
@@ -39,7 +37,8 @@ const ContenedorOpcionA= styled.div`
       margin-top:-15rem;
       margin-left:-20rem;
 `
-const Btn = styled.button`
+/* const Btn = styled.button` */
+const Btn = styled(Link)`
       display:block;
       width: 8rem;
       height:8rem;
@@ -58,9 +57,7 @@ const Btn = styled.button`
             pointer-events:none;
             height:50%;
             width:auto;
-      }
-
-     
+      } 
 `
 
 const Papel = styled(LogoPapel)`      
@@ -100,8 +97,8 @@ const ContenedorOpcionC= styled.div`
 
 
 const ContenedorJuego = () => {
-      const {contador} = useContador();
-      const {modificarContador} = useContador();
+      const {modificarContador} = useContext(TotalContadorContext);
+      const {contador}  = useContext(TotalContadorContext);
 
       const [eleccionJugador, cambiarEleccionJugador] = useState("")
       const opciones = ["piedra", "papel", "tijeras"];
@@ -173,9 +170,6 @@ const ContenedorJuego = () => {
             
       }; 
       
-     
-
-
       return ( 
             <ContenedordelJuego>
                   <FondoTriangulo/>
@@ -183,6 +177,7 @@ const ContenedorJuego = () => {
                               <Btn 
                                     name="papel"
                                     onClick={jugar}
+                                    to='/ContenedorResultado'
                               > 
                                     <Papel                              
                                           viewBox="0 0 49 59"

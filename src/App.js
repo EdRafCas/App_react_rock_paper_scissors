@@ -1,10 +1,10 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {Helmet} from 'react-helmet'
 import Header from './Componentes/Header';
+import Reglas from './Componentes/Reglas';
 import ContenedorJuego from './Componentes/ContenedorJuego';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {ContadorJuegoProvider} from './Contextos/ContadorContext';
-import {useContador} from './Contextos/ContadorContext';
 
 function App() {         
 
@@ -20,10 +20,10 @@ function App() {
         <Header  />
           <BrowserRouter>
             <Switch>
-              {/* <ContenedorJuego contador={contador} modificarContador={modificarContador}/> */}
               <Route path="/"  component={ContenedorJuego} />
             </Switch>
           </BrowserRouter>
+        <Reglas/>
     </ContadorJuegoProvider>
       
       

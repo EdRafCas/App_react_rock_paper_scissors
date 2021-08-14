@@ -1,18 +1,17 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 
 const TotalContadorContext = React.createContext();
 
-const useContador = () => useContext(TotalContadorContext);
 
 const ContadorJuegoProvider = ({children}) =>{
-      const [contador, modificarContador] = useState(1);
+      const [contador, modificarContador] = useState(0);
 
       return(
-            <TotalContadorContext.Provider value={{contador:contador}}>
+            <TotalContadorContext.Provider value={{contador:contador, modificarContador:modificarContador}}>
                   {children}
             </TotalContadorContext.Provider>
       )
       
 }
 
-export {ContadorJuegoProvider, useContador}
+export {ContadorJuegoProvider, TotalContadorContext}
