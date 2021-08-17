@@ -1,11 +1,11 @@
 import React,{useState, useContext} from 'react';
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
 import {ReactComponent as LogoTijera} from './../images/icon-scissors.svg';
 import {ReactComponent as LogoPiedra} from './../images/icon-rock.svg';
 import {TotalContadorContext} from './../Contextos/ContadorContext';
+import Boton from './../Elementos/Boton'
 
 const ContenedordelJuego = styled.div`
       display:flex;
@@ -37,29 +37,6 @@ const ContenedorOpcionA= styled.div`
       margin-top:-15rem;
       margin-left:-20rem;
 `
-/* const Btn = styled.button` */
-const Btn = styled(Link)`
-      display:block;
-      width: 8rem;
-      height:8rem;
-      background: #fff;
-      box-shadow: 0px 5px inset;
-      border-radius:50%;
-      border: 1px solid hsl(217, 16%, 45%);
-      margin: auto;
-      display:flex;
-      align-items: center;
-      justify-content: center;
-      text-align:center;
-      cursor:pointer;
-      
-      svg{
-            pointer-events:none;
-            height:50%;
-            width:auto;
-      } 
-`
-
 const Papel = styled(LogoPapel)`      
 `
 const Piedra = styled(LogoPiedra)`
@@ -94,8 +71,6 @@ const ContenedorOpcionC= styled.div`
       margin-left:20rem;
 `
 
-
-
 const ContenedorJuego = () => {
       const {modificarContador} = useContext(TotalContadorContext);
       const {contador}  = useContext(TotalContadorContext);
@@ -104,6 +79,7 @@ const ContenedorJuego = () => {
       const opciones = ["piedra", "papel", "tijeras"];
       
       const jugar = (e) => {
+            e.preventDefault();
             var seleccionCpu = Math.floor(Math.random() * 3);
             cambiarEleccionJugador(e.target.name);
             let resultado;
@@ -174,36 +150,19 @@ const ContenedorJuego = () => {
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <Btn 
-                                    name="papel"
-                                    onClick={jugar}
-                                    to='/ContenedorResultado'
-                              > 
-                                    <Papel                              
-                                          viewBox="0 0 49 59"
-                                    />
-                              </Btn>
+                              <Boton  as="button" type="submit" to='/Resultado' name="papel" onClick={jugar} > 
+                                    <Papel viewBox="0 0 49 59"/>
+                              </Boton>
                         </ContenedorOpcionA>
                   <ContenedorOpcionB>
-                              <Btn
-                                    name="piedra"
-                                    onClick={jugar}
-                              > 
-                                    <Piedra                         
-                                          viewBox="0 0 49 59"
-                                    />
-                              </Btn>
+                              <Boton to='/Resultado' name="piedra" onClick={jugar}> 
+                                    <Piedra viewBox="0 0 49 59"/>
+                              </Boton>
                   </ContenedorOpcionB>
                   <ContenedorOpcionC>
-                              <Btn
-                                    name="tijeras"
-                                    onClick={jugar}
-                              
-                              > 
-                                    <Tijera                            
-                                          viewBox="0 0 49 59"
-                                    />
-                              </Btn>
+                              <Boton to='/Resultado' name="tijeras" onClick={jugar} > 
+                                    <Tijera viewBox="0 0 49 59" />
+                              </Boton>
                   </ContenedorOpcionC>
             </ContenedordelJuego>
       );

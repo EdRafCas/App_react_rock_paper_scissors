@@ -29,7 +29,7 @@ const ContenedorContador =  () => {
                   <TituloContador>SCORE</TituloContador>
                   <Contador>{contador}</Contador>
             </ContenedorPrincipal>
-            
+             
        );
 }
  
