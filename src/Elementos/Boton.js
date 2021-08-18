@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
 
-const Boton = styled(Link)`
+
+const Boton = styled.button`
       display:block;
       width: 8rem;
       height:8rem;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Boton from './../Elementos/Boton'
+import { useHistory } from 'react-router-dom';
 
 
 const ContenedordelResultado = styled.div`
@@ -19,9 +20,16 @@ const ContenedordelResultado = styled.div`
 
 
 const ResultadoJuego = () => {
+      let history = useHistory();
+
+      const redirect =() =>{
+            history.push("/")
+      }
+
+
       return ( 
             <ContenedordelResultado>
-                  <Boton to="/" ><h1>Resultado</h1></Boton>
+                  <Boton onClick ={redirect}><h1>Resultado</h1></Boton>
             </ContenedordelResultado>
        );
 }

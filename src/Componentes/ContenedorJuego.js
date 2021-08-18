@@ -1,4 +1,5 @@
 import React,{useState, useContext} from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
@@ -77,9 +78,15 @@ const ContenedorJuego = () => {
 
       const [eleccionJugador, cambiarEleccionJugador] = useState("")
       const opciones = ["piedra", "papel", "tijeras"];
+
+      let history = useHistory();
+
+      const redirect =() =>{
+            history.push("/Resultado")
+      }
       
       const jugar = (e) => {
-            e.preventDefault();
+            
             var seleccionCpu = Math.floor(Math.random() * 3);
             cambiarEleccionJugador(e.target.name);
             let resultado;
@@ -150,12 +157,12 @@ const ContenedorJuego = () => {
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <Boton  as="button" type="submit" to='/Resultado' name="papel" onClick={jugar} > 
+                              <Boton name="papel" onClick={ (e)=>{jugar(e);redirect()}} > 
                                     <Papel viewBox="0 0 49 59"/>
                               </Boton>
                         </ContenedorOpcionA>
                   <ContenedorOpcionB>
-                              <Boton to='/Resultado' name="piedra" onClick={jugar}> 
+                              <Boton onClick={redirect} to='/Resultado' name="piedra" > 
                                     <Piedra viewBox="0 0 49 59"/>
                               </Boton>
                   </ContenedorOpcionB>

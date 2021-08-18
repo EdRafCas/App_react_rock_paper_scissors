@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Boton from '../Elementos/Boton';
+import { Route } from 'react-router';
 
 
 const ContenedorReglas = styled.div`
@@ -21,7 +23,7 @@ const Reglas = () => {
 
       return ( 
             <ContenedorReglas>
-                  <h1>Hola</h1>
+                  <h1>redireccionar </h1> 
             </ContenedorReglas> 
        );
 }
