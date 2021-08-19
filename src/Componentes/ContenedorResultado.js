@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 import Boton from './../Elementos/Boton'
-import { useHistory } from 'react-router-dom';
+import {TotalContadorContext} from './../Contextos/ContadorContext';
 
 
 const ContenedordelResultado = styled.div`
@@ -20,16 +20,14 @@ const ContenedordelResultado = styled.div`
 
 
 const ResultadoJuego = () => {
-      let history = useHistory();
-
-      const redirect =() =>{
-            history.push("/")
-      }
+      const {seleccionJugador} = useContext(TotalContadorContext);
+      const {seleccionDelCpu} = useContext(TotalContadorContext);
 
 
       return ( 
             <ContenedordelResultado>
-                  <Boton onClick ={redirect}><h1>Resultado</h1></Boton>
+                  <Boton to="/"><h1>{seleccionJugador}</h1></Boton>
+                  <Boton to="/"><h1>{seleccionDelCpu}</h1></Boton>
             </ContenedordelResultado>
        );
 }

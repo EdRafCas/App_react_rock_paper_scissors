@@ -1,5 +1,4 @@
-import React,{useState, useContext} from 'react';
-import { useHistory } from 'react-router-dom';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
@@ -75,36 +74,40 @@ const ContenedorOpcionC= styled.div`
 const ContenedorJuego = () => {
       const {modificarContador} = useContext(TotalContadorContext);
       const {contador}  = useContext(TotalContadorContext);
+      const {modificarSeleccion} = useContext(TotalContadorContext);
+      const {modificarSeleccionCpu} = useContext(TotalContadorContext);
+      const {modificarResultado} = useContext(TotalContadorContext);
 
-      const [eleccionJugador, cambiarEleccionJugador] = useState("")
       const opciones = ["piedra", "papel", "tijeras"];
 
-      let history = useHistory();
-
-      const redirect =() =>{
-            history.push("/Resultado")
-      }
       
       const jugar = (e) => {
-            
             var seleccionCpu = Math.floor(Math.random() * 3);
-            cambiarEleccionJugador(e.target.name);
             let resultado;
             if(e.target.name === "papel") {
-                  switch (eleccionJugador + opciones[seleccionCpu]){
+                  switch (e.target.name + opciones[seleccionCpu]){
                               case 'papelpiedra':
                                     modificarContador(contador + 1)
-                                    resultado = "ganaste"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Ganaste"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                               case 'papeltijeras':
                                     modificarContador(contador -1)
-                                    resultado = "perdiste"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Perdiste"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                               default:
                                     modificarContador(contador +0)
-                                    resultado = "empate"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Empate"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                   } 
@@ -112,39 +115,58 @@ const ContenedorJuego = () => {
             }
 
             if(e.target.name === "piedra") {
-                  switch (eleccionJugador + opciones[seleccionCpu]){
+                  switch (e.target.name + opciones[seleccionCpu]){
                               case 'piedratijeras':
                                     modificarContador(contador + 1)
-                                    resultado = "ganaste"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Ganaste"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                               case 'piedrapapel':
                                     modificarContador(contador -1)
-                                    resultado = "perdiste"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Perdiste"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                               default:
                                     modificarContador(contador +0)
-                                    resultado = "empate"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Empate"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
+                                    break;
                   }      
             }
 
             if(e.target.name === "tijeras") {
-                  switch (eleccionJugador + opciones[seleccionCpu]){
+                  switch (e.target.name + opciones[seleccionCpu]){
                               case 'tijeraspapel':
                                     modificarContador(contador + 1)
-                                    resultado = "ganaste"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Ganaste"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                               case 'tijeraspiedra':
                                     modificarContador(contador -1)
-                                    resultado = "perdiste"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Perdiste"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                                     break;
                               default:
                                     modificarContador(contador +0)
-                                    resultado = "empate"
+                                    modificarSeleccion(e.target.name)
+                                    modificarSeleccionCpu(opciones[seleccionCpu])
+                                    resultado = "Empate"
+                                    modificarSeleccionCpu(resultado)
                                     console.log(resultado)
                   }      
             }
@@ -157,12 +179,12 @@ const ContenedorJuego = () => {
             <ContenedordelJuego>
                   <FondoTriangulo/>
                         <ContenedorOpcionA>
-                              <Boton name="papel" onClick={ (e)=>{jugar(e);redirect()}} > 
+                              <Boton to='/Resultado' name="papel" onClick={jugar} > 
                                     <Papel viewBox="0 0 49 59"/>
                               </Boton>
                         </ContenedorOpcionA>
                   <ContenedorOpcionB>
-                              <Boton onClick={redirect} to='/Resultado' name="piedra" > 
+                              <Boton to='/Resultado' name="piedra" onClick={jugar}> 
                                     <Piedra viewBox="0 0 49 59"/>
                               </Boton>
                   </ContenedorOpcionB>
