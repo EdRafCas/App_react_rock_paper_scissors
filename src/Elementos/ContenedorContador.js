@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
+import tema from '../Tema';
 import {TotalContadorContext} from './../Contextos/ContadorContext';
 
 const ContenedorPrincipal= styled.div`
@@ -11,12 +12,12 @@ const ContenedorPrincipal= styled.div`
 `
 
 const TituloContador= styled.h1`
-      color: hsl(229, 64%, 46%);
+      color: ${tema.AzulContador};
       font-size:1rem;
       `;
 
 const Contador = styled.p`
-      color: hsl(229, 25%, 31%);
+      color: ${tema.GrisContador};
       font-size: 3rem;
       font-weight:700;
       margin:auto;

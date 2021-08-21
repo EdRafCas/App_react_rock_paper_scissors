@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
+import tema from '../Tema';
 import {FondoTriangulo, Papel, Piedra, Tijera} from './../Elementos/ElementosJuego'
 import {TotalContadorContext} from './../Contextos/ContadorContext';
 import Boton from './../Elementos/Boton'
@@ -9,7 +10,7 @@ const ContenedordelJuego = styled.div`
       width: 100%;
       min-width:566px;
       border-radius:0.625rem;
-      border: 0.25rem solid hsl(217, 16%, 45%);
+      border: 0.25rem solid ${tema.Borde};
       justify-content: center;
       align-items:center;
       margin-top: 0rem;
@@ -21,26 +22,25 @@ const ContenedordelJuego = styled.div`
 const ContenedorOpcionA= styled.div`
       display:flex;
       position:fixed;
-      background: linear-gradient(hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+      background: ${tema.GradienteAzul};
       width: 10rem;
       height:10rem;
       border-radius:50%;
-      border: 1px solid hsl(217, 16%, 45%);
+      border: 1px solid ${tema.Borde};
       box-shadow: 0px 7px 0px 0px ;
       z-index:1;
       margin-top:-15rem;
       margin-left:-20rem;
 `
 
-
 const ContenedorOpcionB= styled.div`
       display:flex;
       position:fixed;
-      background: linear-gradient(hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+      background: ${tema.GradienteRojo};
       width: 10rem;
       height:10rem;
       border-radius:50%;
-      border: 1px solid hsl(217, 16%, 45%);
+      border: 1px solid ${tema.Borde};
       box-shadow: 0px 7px 0px 0px ;
       z-index:1;
       margin-top:15rem;
@@ -49,11 +49,11 @@ const ContenedorOpcionB= styled.div`
 const ContenedorOpcionC= styled.div`
       display:flex;
       position:fixed;
-      background: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+      background: ${tema.GradienteAmarillo};
       width: 10rem;
       height:10rem;
       border-radius:50%;
-      border: 1px solid hsl(217, 16%, 45%);
+      border: 1px solid ${tema.Borde};
       box-shadow: 0px 7px 0px 0px ;
       z-index:1;
       margin-top:-15rem;

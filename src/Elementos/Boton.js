@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import tema from "../Tema";
 
 
 const Boton = styled(Link)`
@@ -9,7 +10,7 @@ const Boton = styled(Link)`
       background: #fff;
       box-shadow: 0px 5px inset;
       border-radius:50%;
-      border: 1px solid hsl(217, 16%, 45%);
+      border: 1px solid ${tema.Borde};
       margin: auto;
       display:flex;
       align-items: center;
