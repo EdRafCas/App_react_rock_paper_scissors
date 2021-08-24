@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Boton from '../Elementos/Boton';
-import { Route } from 'react-router';
 
 
 const ContenedorReglas = styled.div`
@@ -10,12 +8,23 @@ const ContenedorReglas = styled.div`
       min-width:560px;
       border-radius:0.625rem;
       border: 0.25rem solid hsl(217, 16%, 45%);
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
-
+      
 ` 
+
+const BotonReglas = styled.button`
+     background: none; 
+     color: #ffff ;
+     border-radius:0.625rem;
+     border: 0.25rem solid white;
+     width: 10rem;
+     height:3rem;
+     cursor:pointer;
+
+`
 
 
 const Reglas = () => {
@@ -23,7 +32,7 @@ const Reglas = () => {
 
       return ( 
             <ContenedorReglas>
-                  <h1>redireccionar </h1> 
+                  <BotonReglas>R U L E S</BotonReglas>
             </ContenedorReglas> 
        );
 }
