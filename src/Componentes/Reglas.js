@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+
+
 
 
 const ContenedorReglas = styled.div`
@@ -28,11 +30,17 @@ const BotonReglas = styled.button`
 
 
 const Reglas = () => {
+      const [mostrar, cambiarMostrar] = useState(false)
+
+
       
 
       return ( 
             <ContenedorReglas>
-                  <BotonReglas>R U L E S</BotonReglas>
+                  <BotonReglas onClick={ ()=> cambiarMostrar(!mostrar)}>R U L E S</BotonReglas>
+                  {mostrar ? <h1>mostrar</h1>
+                  : <h1>Ocultar</h1>
+                  }
             </ContenedorReglas> 
        );
 }
