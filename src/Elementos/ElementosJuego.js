@@ -1,9 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Triangulo} from './../images/bg-triangle.svg';
 import {ReactComponent as LogoPapel} from './../images/icon-paper.svg';
 import {ReactComponent as LogoTijera} from './../images/icon-scissors.svg';
 import {ReactComponent as LogoPiedra} from './../images/icon-rock.svg';
+import {ReactComponent as ReglasJuego} from './../images/image-rules.svg';
 
 const FondoTriangulo = styled(Triangulo)`
       height:auto;
@@ -14,6 +14,5 @@ const Piedra = styled(LogoPiedra)`
 `
 const Tijera = styled(LogoTijera)`
 `
-
  
-export {FondoTriangulo, Papel, Piedra, Tijera};
+export {FondoTriangulo, Papel, Piedra, Tijera, ReglasJuego};

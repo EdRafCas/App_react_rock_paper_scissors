@@ -1,7 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet'
 import Header from './Componentes/Header';
-import Reglas from './Componentes/Reglas';
 import ContenedorJuego from './Componentes/ContenedorJuego';
 import ContenedorResultado from './Componentes/ContenedorResultado';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
@@ -27,7 +26,7 @@ function App() {
               </Switch>
           </BrowserRouter>
     </ContadorJuegoProvider>
-    <Reglas/>
+
       
     </>
   );
