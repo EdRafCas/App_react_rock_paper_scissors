@@ -1,7 +1,15 @@
 import React, {useState, useContext} from 'react';
 import styled from 'styled-components';
 import tema from '../Tema';
-import {FondoTriangulo, Papel, Piedra, Tijera, ReglasJuego} from './../Elementos/ElementosJuego'
+import {
+      FondoTriangulo, 
+      Papel, 
+      Piedra, 
+      Tijera, 
+      ReglasJuego, 
+      ContenedorOpcionA, 
+      ContenedorOpcionB, 
+      ContenedorOpcionC} from './../Elementos/ElementosJuego'
 import {TotalContadorContext} from './../Contextos/ContadorContext';
 import Boton from './../Elementos/Boton'
 
@@ -17,47 +25,6 @@ const ContenedordelJuego = styled.div`
       padding:1rem 2rem;
       min-height:60%;
 
-`
-
-const ContenedorOpcionA= styled.div`
-      display:flex;
-      position:absolute;
-      background: ${tema.GradienteAzul};
-      width: 10rem;
-      height:10rem;
-      border-radius:50%;
-      border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
-      z-index:1;
-      margin-top:-15rem;
-      margin-left:-20rem;
-`
-
-const ContenedorOpcionB= styled.div`
-      display:flex;
-      position:absolute;
-      background: ${tema.GradienteRojo};
-      width: 10rem;
-      height:10rem;
-      border-radius:50%;
-      border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
-      z-index:1;
-      margin-top:15rem;
-      margin-left:0rem;
-`
-const ContenedorOpcionC= styled.div`
-      display:flex;
-      position:absolute;
-      background: ${tema.GradienteAmarillo};
-      width: 10rem;
-      height:10rem;
-      border-radius:50%;
-      border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
-      z-index:1;
-      margin-top:-15rem;
-      margin-left:20rem;
 `
 const ContenedorReglas = styled.div`
       display:flex;
@@ -80,14 +47,35 @@ const BotonReglas = styled.button`
      cursor:pointer;
 
 `
+const BotonCierre = styled.button`
+      background: none; 
+      color: black;
+      border-radius:0.625rem;
+      border: 0.25rem solid white;
+      width: 5rem;
+      height:3rem;
+      cursor:pointer;
+      position:absolute;
+      top:0;
+      right:0;
+      font-size:2rem;
+`
 
-const ContenedorImagen = styled(ReglasJuego)`
+
+const Svg = styled(ReglasJuego)`
+
+`
+const ContenedorSvg = styled.div`
       display:flex;
+      flex-direction:column;
       position:absolute;
       z-index:1;
       justify-content:center;
-      
+      background:white;
+      padding:1.5rem;
+      border-radius:5%;
 `
+
 
 const ContenedorJuego = () => {
       const {modificarContador} = useContext(TotalContadorContext);
@@ -213,7 +201,11 @@ const ContenedorJuego = () => {
                                     <Tijera viewBox="0 0 49 59" />
                               </Boton>
                   </ContenedorOpcionC> 
-                  {mostrar ? <ContenedorImagen viewBox="0 0 304 270" height="430" width="490"/>
+                  {mostrar ? <ContenedorSvg>
+                                    <h1>RULES</h1>
+                                    <BotonCierre onClick={ ()=> cambiarMostrar(!mostrar)}>X</BotonCierre>
+                                    <Svg viewBox="0 0 304 270" height="430" width="490"/>
+                              </ContenedorSvg>
                   : ""
                   }                 
             </ContenedordelJuego>
