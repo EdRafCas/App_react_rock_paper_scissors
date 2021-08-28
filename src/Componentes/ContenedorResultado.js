@@ -10,9 +10,8 @@ import {
       Piedra, 
       Tijera, 
       ReglasJuego, 
-      ContenedorOpcionA, 
-      ContenedorOpcionB, 
-      ContenedorOpcionC} from './../Elementos/ElementosJuego'
+      ContenedorOpciones,
+      } from './../Elementos/ElementosJuego'
 
 
 
@@ -22,7 +21,7 @@ const ContenedordelResultado = styled.div`
       min-width:566px;
       border-radius:0.625rem;
       border: 0.25rem solid ${tema.Borde};
-      justify-content: center;
+      justify-content: space-evenly;
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
@@ -41,20 +40,20 @@ const ResultadoJuego = () => {
             <ContenedordelResultado>
                   {seleccionJugador == "papel" 
                   ? 
-                  <ContenedorOpcionA>
+                  <ContenedorOpciones Papel>
                         <Boton name="papel" to="/"> 
                                     <Papel viewBox="0 0 49 59"/>
                         </Boton>
-                  </ContenedorOpcionA>
+                  </ContenedorOpciones>
                   : <h1>diferente</h1>}
 
                   {seleccionDelCpu == "piedra" 
                   ? 
-                  <ContenedorOpcionB>
+                  <ContenedorOpciones Piedra>
                         <Boton name="piedra" to="/"> 
                                     <Piedra viewBox="0 0 49 59"/>
                         </Boton>
-                  </ContenedorOpcionB>
+                  </ContenedorOpciones>
                   : <h1>diferente</h1>}
             </ContenedordelResultado>
        );

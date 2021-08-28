@@ -6,10 +6,9 @@ import {
       Papel, 
       Piedra, 
       Tijera, 
-      ReglasJuego, 
-      ContenedorOpcionA, 
-      ContenedorOpcionB, 
-      ContenedorOpcionC} from './../Elementos/ElementosJuego'
+      ReglasJuego,
+      ContenedorOpciones
+} from './../Elementos/ElementosJuego'
 import {TotalContadorContext} from './../Contextos/ContadorContext';
 import Boton from './../Elementos/Boton'
 
@@ -186,21 +185,21 @@ const ContenedorJuego = () => {
             <>
             <ContenedordelJuego>
                   <FondoTriangulo/>
-                        <ContenedorOpcionA>
+                        <ContenedorOpciones OpcionA Papel>
                               <Boton to='/Resultado' name="papel" onClick={jugar} > 
                                     <Papel viewBox="0 0 49 59"/>
                               </Boton>
-                        </ContenedorOpcionA>
-                  <ContenedorOpcionB>
+                        </ContenedorOpciones>
+                  <ContenedorOpciones OpcionB Piedra>
                               <Boton to='/Resultado' name="piedra" onClick={jugar}> 
                                     <Piedra viewBox="0 0 49 59"/>
                               </Boton>
-                  </ContenedorOpcionB>
-                  <ContenedorOpcionC>
+                  </ContenedorOpciones>
+                  <ContenedorOpciones OpcionC Tijera>
                               <Boton to='/Resultado' name="tijeras" onClick={jugar} > 
                                     <Tijera viewBox="0 0 49 59" />
                               </Boton>
-                  </ContenedorOpcionC> 
+                  </ContenedorOpciones> 
                   {mostrar ? <ContenedorSvg>
                                     <h1>RULES</h1>
                                     <BotonCierre onClick={ ()=> cambiarMostrar(!mostrar)}>X</BotonCierre>
