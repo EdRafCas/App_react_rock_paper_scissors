@@ -24,5 +24,35 @@ const Boton = styled(Link)`
             width:auto;
       } 
 `
+const BotonReglas = styled.button`
+     background: none; 
+     color: #ffff ;
+     border-radius:0.625rem;
+     border: 0.25rem solid white;
+     width: 10rem;
+     height:3rem;
+     cursor:pointer;
 
-export default Boton;
+`
+const BotonResultado = styled(Link)`
+     background: #fff; 
+     color:black ;
+     border-radius:0.625rem;
+     border: 0.25rem solid white;
+     width: 10rem;
+     height:3rem;
+     cursor:pointer;
+     text-decoration:none;
+
+     *{
+            display:flex;
+            justify-content:center;
+           align-content: center;
+           margin:auto;
+           
+     }
+
+`
+
+
+export {Boton, BotonReglas, BotonResultado};

@@ -10,7 +10,7 @@ import {
       ContenedorOpciones
 } from './../Elementos/ElementosJuego'
 import {TotalContadorContext} from './../Contextos/ContadorContext';
-import Boton from './../Elementos/Boton'
+import {Boton, BotonReglas} from './../Elementos/Boton'
 
 const ContenedordelJuego = styled.div`
       display:flex;
@@ -36,16 +36,7 @@ const ContenedorReglas = styled.div`
       margin-top: 0rem;
       padding:1rem 2rem;
 `
-const BotonReglas = styled.button`
-     background: none; 
-     color: #ffff ;
-     border-radius:0.625rem;
-     border: 0.25rem solid white;
-     width: 10rem;
-     height:3rem;
-     cursor:pointer;
 
-`
 const BotonCierre = styled.button`
       background: none; 
       color: black;
@@ -96,7 +87,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador + 1)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Ganaste"
+                                    resultado = "You win"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -104,7 +95,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador -1)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Perdiste"
+                                    resultado = "You lose"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -112,7 +103,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador +0)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Empate"
+                                    resultado = "Tie"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -126,7 +117,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador + 1)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Ganaste"
+                                    resultado = "You win"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -134,7 +125,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador -1)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Perdiste"
+                                    resultado = "You lose"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -142,7 +133,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador +0)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Empate"
+                                    resultado = "Tie"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -155,7 +146,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador + 1)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Ganaste"
+                                    resultado = "You win"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -163,7 +154,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador -1)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Perdiste"
+                                    resultado = "You lose"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                                     break;
@@ -171,7 +162,7 @@ const ContenedorJuego = () => {
                                     modificarContador(contador +0)
                                     modificarSeleccion(e.target.name)
                                     modificarSeleccionCpu(opciones[seleccionCpu])
-                                    resultado = "Empate"
+                                    resultado = "Tie"
                                     modificarResultado(resultado)
                                     console.log(resultado)
                   }      

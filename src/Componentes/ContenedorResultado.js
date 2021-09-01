@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
-import Boton from './../Elementos/Boton'
+import {Boton, BotonResultado} from './../Elementos/Boton'
 import {TotalContadorContext} from './../Contextos/ContadorContext';
 import tema from '../Tema';
 
@@ -9,7 +9,6 @@ import {
       Papel, 
       Piedra, 
       Tijera, 
-      ReglasJuego, 
       ContenedorOpciones,
       } from './../Elementos/ElementosJuego'
 
@@ -34,27 +33,63 @@ const ContenedordelResultado = styled.div`
 const ResultadoJuego = () => {
       const {seleccionJugador} = useContext(TotalContadorContext);
       const {seleccionDelCpu} = useContext(TotalContadorContext);
+      const {resultadoJuego} = useContext(TotalContadorContext);
 
 
       return ( 
             <ContenedordelResultado>
-                  {seleccionJugador == "papel" 
-                  ? 
-                  <ContenedorOpciones Papel>
-                        <Boton name="papel" to="/"> 
-                                    <Papel viewBox="0 0 49 59"/>
-                        </Boton>
-                  </ContenedorOpciones>
-                  : <h1>diferente</h1>}
+                  
+                  {
+                        seleccionJugador === "papel" ? 
+                        <ContenedorOpciones Papel>
+                              <Boton name="papel" to="/"> 
+                                          <Papel viewBox="0 0 49 59"/>
+                              </Boton>
+                        </ContenedorOpciones>
+                        : seleccionJugador === "piedra" ?
+                        <ContenedorOpciones Piedra>
+                              <Boton name="piedra" to="/"> 
+                                          <Piedra viewBox="0 0 49 59"/>
+                              </Boton>
+                        </ContenedorOpciones>
+                        : seleccionJugador === "tijeras" ?
+                        <ContenedorOpciones Tijera>
+                              <Boton name="tijera" to="/"> 
+                                          <Tijera viewBox="0 0 49 59"/>
+                              </Boton>
+                        </ContenedorOpciones>
+                        : <ContenedorOpciones Vacio>
+                              <Boton to="/"> 
+                                          <h1>PLAY!</h1>
+                              </Boton>
+                        </ContenedorOpciones>
+                  }
+                  {resultadoJuego ? <BotonResultado to="/">
+                                          <h1>{resultadoJuego}</h1>
+                                    </BotonResultado>:
+                  ""}
+                  {
+                        seleccionDelCpu === "papel" ? 
+                        <ContenedorOpciones Papel>
+                              <Boton name="papel" to="/"> 
+                                          <Papel viewBox="0 0 49 59"/>
+                              </Boton>
+                        </ContenedorOpciones>
+                        : seleccionDelCpu === "piedra" ?
+                        <ContenedorOpciones Piedra>
+                              <Boton name="piedra" to="/"> 
+                                          <Piedra viewBox="0 0 49 59"/>
+                              </Boton>
+                        </ContenedorOpciones>
+                        : seleccionDelCpu === "tijeras" ?
+                        <ContenedorOpciones Tijera>
+                              <Boton name="tijera" to="/"> 
+                                          <Tijera viewBox="0 0 49 59"/>
+                              </Boton>
+                        </ContenedorOpciones>
+                        : ""
+                  }
 
-                  {seleccionDelCpu == "piedra" 
-                  ? 
-                  <ContenedorOpciones Piedra>
-                        <Boton name="piedra" to="/"> 
-                                    <Piedra viewBox="0 0 49 59"/>
-                        </Boton>
-                  </ContenedorOpciones>
-                  : <h1>diferente</h1>}
             </ContenedordelResultado>
        );
 }

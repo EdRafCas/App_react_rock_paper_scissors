@@ -28,6 +28,7 @@ const ContenedorOpcionA= styled.div`
       margin-top:-15rem;
       margin-left:-20rem;
 `
+
 const ContenedorOpciones= styled.div`
       display:flex;
       position: ${(props) => props.OpcionA || props.OpcionB || props.OpcionC ? "absolute"
@@ -36,7 +37,9 @@ const ContenedorOpciones= styled.div`
       background: ${(props) => props.Papel ? tema.GradienteAzul 
                               : props.Piedra ? tema.GradienteRojo 
                               : props.Tijera ? tema.GradienteAmarillo 
+                              : props.Vacio ? tema.AzulContador 
                               : "0000"};
+      
       width: 10rem;
       height:10rem;
       border-radius:50%;
@@ -53,6 +56,12 @@ const ContenedorOpciones= styled.div`
                               : props.OpcionC ? "20rem" 
                               : props.Resultado ? "auto" 
                               : "0rem"};
+      h1{
+            color:black;
+            text-decoration:none;
+      } 
+      a {text-decoration:none;}
+                  
 `
 /* ${tema.GradienteAzul} */
 const ContenedorOpcionB= styled.div`
