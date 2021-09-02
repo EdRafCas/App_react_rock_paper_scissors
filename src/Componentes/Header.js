@@ -8,7 +8,6 @@ import tema from '../Tema';
 const ContenedorHeader = styled.div`
       display:flex;
       width: 100%;
-      min-width:560px;
       border-radius:0.625rem;
       border: 0.25rem solid ${tema.Borde};
       justify-content: space-between;

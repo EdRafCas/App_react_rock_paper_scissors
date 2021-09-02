@@ -35,20 +35,22 @@ const BotonReglas = styled.button`
 
 `
 const BotonResultado = styled(Link)`
+      display:flex;
+      align-items:center;
+      justify-content:center;
      background: #fff; 
      color:black ;
      border-radius:0.625rem;
      border: 0.25rem solid white;
-     width: 10rem;
+     width: 100%;
      height:3rem;
      cursor:pointer;
      text-decoration:none;
+     margin: auto;
 
      *{
-            display:flex;
-            justify-content:center;
-           align-content: center;
-           margin:auto;
+            font-size:1rem;
+            color:${tema.AzulContador}
            
      }
 

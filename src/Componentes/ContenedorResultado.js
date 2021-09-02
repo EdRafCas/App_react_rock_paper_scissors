@@ -17,16 +17,34 @@ import {
 const ContenedordelResultado = styled.div`
       display:flex;
       width: 100%;
-      min-width:566px;
+      flex-direction:row;
       border-radius:0.625rem;
       border: 0.25rem solid ${tema.Borde};
       justify-content: space-evenly;
       align-items:center;
       margin-top: 0rem;
-      padding:1rem 2rem;
       min-height:70%;
       
 
+      @media(max-width: 550px) { 
+      flex-direction:column;
+    }
+     
+
+`
+const Resultado = styled.div`
+      flex-direction:row;
+      width:11rem;
+
+`
+
+const Eleccion = styled.h1`
+      font-size:2rem;
+      color:white;
+      margin:auto;
+      text-align:center;
+      margin: 2rem 0;
+      
 `
 
 
@@ -40,53 +58,79 @@ const ResultadoJuego = () => {
             <ContenedordelResultado>
                   
                   {
-                        seleccionJugador === "papel" ? 
-                        <ContenedorOpciones Papel>
-                              <Boton name="papel" to="/"> 
-                                          <Papel viewBox="0 0 49 59"/>
-                              </Boton>
-                        </ContenedorOpciones>
+                        seleccionJugador === "papel" ?
+                        <Resultado>
+                              <Eleccion>You picked</Eleccion>
+                              <ContenedorOpciones Papel>
+                                    <Boton name="papel" to="/Resultado"> 
+                                                <Papel viewBox="0 0 49 59"/>
+                                    </Boton>
+                              </ContenedorOpciones>
+                        </Resultado>
+                              
                         : seleccionJugador === "piedra" ?
-                        <ContenedorOpciones Piedra>
-                              <Boton name="piedra" to="/"> 
-                                          <Piedra viewBox="0 0 49 59"/>
-                              </Boton>
-                        </ContenedorOpciones>
+                        <Resultado>
+                              <Eleccion>You picked</Eleccion>
+                              <ContenedorOpciones Piedra>
+                                    <Boton name="piedra" to="/Resultado"> 
+                                                <Piedra viewBox="0 0 49 59"/>
+                                    </Boton>
+                              </ContenedorOpciones>
+                        </Resultado>
+                        
                         : seleccionJugador === "tijeras" ?
-                        <ContenedorOpciones Tijera>
-                              <Boton name="tijera" to="/"> 
-                                          <Tijera viewBox="0 0 49 59"/>
-                              </Boton>
-                        </ContenedorOpciones>
+                        <Resultado>
+                              <Eleccion>You picked</Eleccion>
+                              <ContenedorOpciones Tijera>
+                                    <Boton name="tijera" to="/Resultado"> 
+                                                <Tijera viewBox="0 0 49 59"/>
+                                    </Boton>
+                              </ContenedorOpciones>
+                        </Resultado>
                         : <ContenedorOpciones Vacio>
                               <Boton to="/"> 
                                           <h1>PLAY!</h1>
                               </Boton>
                         </ContenedorOpciones>
                   }
-                  {resultadoJuego ? <BotonResultado to="/">
-                                          <h1>{resultadoJuego}</h1>
-                                    </BotonResultado>:
-                  ""}
+                  {resultadoJuego ? <Resultado>
+                                          <Eleccion>{resultadoJuego}</Eleccion>
+                                          <BotonResultado to="/">
+                                           <h1> P L A Y  A G A I N </h1>
+                                          </BotonResultado>
+                                    </Resultado>
+                                          
+                  :""}
                   {
                         seleccionDelCpu === "papel" ? 
-                        <ContenedorOpciones Papel>
-                              <Boton name="papel" to="/"> 
-                                          <Papel viewBox="0 0 49 59"/>
-                              </Boton>
-                        </ContenedorOpciones>
+                        <Resultado>
+                              <Eleccion>CPU picked</Eleccion>
+                              <ContenedorOpciones Papel>
+                                    <Boton name="papel" to="/Resultado"> 
+                                                <Papel viewBox="0 0 49 59"/>
+                                    </Boton>
+                              </ContenedorOpciones>
+                        </Resultado>
+                        
                         : seleccionDelCpu === "piedra" ?
-                        <ContenedorOpciones Piedra>
-                              <Boton name="piedra" to="/"> 
-                                          <Piedra viewBox="0 0 49 59"/>
-                              </Boton>
-                        </ContenedorOpciones>
+                        <Resultado>
+                              <Eleccion>CPU picked</Eleccion>
+                              <ContenedorOpciones Piedra>
+                                    <Boton name="piedra" to="/Resultado"> 
+                                                <Piedra viewBox="0 0 49 59"/>
+                                    </Boton>
+                              </ContenedorOpciones>
+                        </Resultado>
                         : seleccionDelCpu === "tijeras" ?
-                        <ContenedorOpciones Tijera>
-                              <Boton name="tijera" to="/"> 
-                                          <Tijera viewBox="0 0 49 59"/>
-                              </Boton>
-                        </ContenedorOpciones>
+                        <Resultado>
+                              <Eleccion>CPU picked</Eleccion>
+                              <ContenedorOpciones Tijera>
+                                    <Boton name="tijera" to="/Resultado"> 
+                                                <Tijera viewBox="0 0 49 59"/>
+                                    </Boton>
+                              </ContenedorOpciones>
+                        </Resultado>
+                        
                         : ""
                   }
 

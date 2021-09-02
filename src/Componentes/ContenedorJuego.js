@@ -15,7 +15,6 @@ import {Boton, BotonReglas} from './../Elementos/Boton'
 const ContenedordelJuego = styled.div`
       display:flex;
       width: 100%;
-      min-width:566px;
       border-radius:0.625rem;
       border: 0.25rem solid ${tema.Borde};
       justify-content: center;
@@ -28,13 +27,18 @@ const ContenedordelJuego = styled.div`
 const ContenedorReglas = styled.div`
       display:flex;
       width: 100%;
-      min-width:560px;
       border-radius:0.625rem;
       border: 0.25rem solid hsl(217, 16%, 45%);
       justify-content: flex-end;
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
+
+      @media(max-width: 550px) { 
+        justify-content: center;
+    }
+
+
 `
 
 const BotonCierre = styled.button`
