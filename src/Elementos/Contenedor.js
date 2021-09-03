@@ -15,10 +15,13 @@ const Contenedor = styled.div`
     position: relative;
     z-index: 100;
  
-    @media(max-width: 60rem){ /* 950px */
-        height: 95vh;
-        max-height: none;
+
+    @media(max-width: 550px){ /* 950px */
+        width: 100%;
+        justify-content: center;
+        margin:0;
     }
+
 `;
 
 export default Contenedor;

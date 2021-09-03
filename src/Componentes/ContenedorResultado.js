@@ -19,7 +19,7 @@ const ContenedordelResultado = styled.div`
       width: 100%;
       flex-direction:row;
       border-radius:0.625rem;
-      border: 0.25rem solid ${tema.Borde};
+      /* border: 0.25rem solid ${tema.Borde}; */
       justify-content: space-evenly;
       align-items:center;
       margin-top: 0rem;

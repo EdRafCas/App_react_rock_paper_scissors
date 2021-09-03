@@ -16,7 +16,7 @@ const ContenedordelJuego = styled.div`
       display:flex;
       width: 100%;
       border-radius:0.625rem;
-      border: 0.25rem solid ${tema.Borde};
+      /* border: 0.25rem solid ${tema.Borde}; */
       justify-content: center;
       align-items:center;
       margin-top: 0rem;
@@ -28,16 +28,15 @@ const ContenedorReglas = styled.div`
       display:flex;
       width: 100%;
       border-radius:0.625rem;
-      border: 0.25rem solid hsl(217, 16%, 45%);
+      /* border: 0.25rem solid hsl(217, 16%, 45%); */
       justify-content: flex-end;
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
 
       @media(max-width: 550px) { 
-        justify-content: center;
+      justify-content:center;
     }
-
 
 `
 
@@ -57,6 +56,7 @@ const BotonCierre = styled.button`
 
 
 const Svg = styled(ReglasJuego)`
+        max-width: 100%;
 
 `
 const ContenedorSvg = styled.div`
@@ -68,6 +68,10 @@ const ContenedorSvg = styled.div`
       background:white;
       padding:1.5rem;
       border-radius:5%;
+
+      @media(max-width: 550px) { 
+      width:100%;
+    }
 `
 
 
@@ -195,6 +199,7 @@ const ContenedorJuego = () => {
                                     <Tijera viewBox="0 0 49 59" />
                               </Boton>
                   </ContenedorOpciones> 
+
                   {mostrar ? <ContenedorSvg>
                                     <h1>RULES</h1>
                                     <BotonCierre onClick={ ()=> cambiarMostrar(!mostrar)}>X</BotonCierre>

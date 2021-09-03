@@ -21,7 +21,7 @@ const Index = () => {
         <link rel="shortcut icon" href={Favicon} type="image/x-icon"/>
       </Helmet>
 
-      <Contenedor>
+      <Contenedor >
         <App />
       </Contenedor>
       

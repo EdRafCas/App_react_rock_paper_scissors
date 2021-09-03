@@ -15,9 +15,14 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Barlow Semi Condensed', sans-serif;
+
+  
 }
 
+
+
 #root {
+  display: flex;
   width: 100%;
-  min-width: 550px;
+  min-width: 500px;
 }
