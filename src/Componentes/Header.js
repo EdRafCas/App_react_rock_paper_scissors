@@ -15,8 +15,17 @@ const ContenedorHeader = styled.div`
       margin-top: 0rem;
       padding:1rem 2rem;
 
+      @media(max-width: 550px) { 
+      justify-content: center;
+      width:100%;
+    }
+
 ` 
 const Logotipo = styled(Logo)`
+      @media(max-width: 550px) { 
+            justify-content: center;
+            height:auto;
+      }
 
 `
 

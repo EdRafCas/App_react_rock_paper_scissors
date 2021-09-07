@@ -4,4 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## This project (when finished) will be a clone for the "rock-paper-scissors" project as showed in FRONTEND MENTOR
 
-## more to follow
+## Libraries implemented:
+
+In the project we will need:
+
+### `styled components`
+
+### `web font loader`
+
+### `React Router{BrowserRouter, Route, Switch, useHistory, useParams}`
+### `React Helmet`
+### `Firebase {auth, firestore}`

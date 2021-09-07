@@ -24,5 +24,5 @@ body {
 #root {
   display: flex;
   width: 100%;
-  min-width: 500px;
+  min-width: 375px;
 }

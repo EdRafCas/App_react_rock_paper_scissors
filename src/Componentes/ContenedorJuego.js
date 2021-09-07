@@ -14,6 +14,7 @@ import {Boton, BotonReglas} from './../Elementos/Boton'
 
 const ContenedordelJuego = styled.div`
       display:flex;
+      flex-direction:column;
       width: 100%;
       border-radius:0.625rem;
       /* border: 0.25rem solid ${tema.Borde}; */
@@ -21,7 +22,12 @@ const ContenedordelJuego = styled.div`
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
-      min-height:60%;
+      min-height:50%;
+      
+      @media(max-width: 500px) { 
+            width:375px;
+           min-width:375px;
+      }
 
 `
 const ContenedorReglas = styled.div`
@@ -69,7 +75,7 @@ const ContenedorSvg = styled.div`
       padding:1.5rem;
       border-radius:5%;
 
-      @media(max-width: 550px) { 
+      @media(max-width: 375px) { 
       width:100%;
     }
 `
@@ -97,7 +103,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "You win"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                               case 'papeltijeras':
                                     modificarContador(contador -1)
@@ -105,7 +111,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "You lose"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                               default:
                                     modificarContador(contador +0)
@@ -113,7 +119,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "Tie"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                   } 
 
@@ -127,7 +133,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "You win"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                               case 'piedrapapel':
                                     modificarContador(contador -1)
@@ -135,7 +141,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "You lose"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                               default:
                                     modificarContador(contador +0)
@@ -143,7 +149,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "Tie"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                   }      
             }
@@ -156,7 +162,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "You win"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                               case 'tijeraspiedra':
                                     modificarContador(contador -1)
@@ -164,7 +170,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "You lose"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                                     break;
                               default:
                                     modificarContador(contador +0)
@@ -172,7 +178,7 @@ const ContenedorJuego = () => {
                                     modificarSeleccionCpu(opciones[seleccionCpu])
                                     resultado = "Tie"
                                     modificarResultado(resultado)
-                                    console.log(resultado)
+                                    /* console.log(resultado) */
                   }      
             }
 
@@ -183,7 +189,7 @@ const ContenedorJuego = () => {
       return ( 
             <>
             <ContenedordelJuego>
-                  <FondoTriangulo/>
+                  <FondoTriangulo viewBox="0 0 305 260" height="277" width="305"/>
                         <ContenedorOpciones OpcionA Papel>
                               <Boton to='/Resultado' name="papel" onClick={jugar} > 
                                     <Papel viewBox="0 0 49 59"/>

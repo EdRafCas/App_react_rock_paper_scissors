@@ -17,7 +17,7 @@ import {
 const ContenedordelResultado = styled.div`
       display:flex;
       width: 100%;
-      flex-direction:row;
+      flex-direction:column;
       border-radius:0.625rem;
       /* border: 0.25rem solid ${tema.Borde}; */
       justify-content: space-evenly;
@@ -35,6 +35,7 @@ const ContenedordelResultado = styled.div`
 const Resultado = styled.div`
       flex-direction:row;
       width:11rem;
+      align-items:center;
 
 `
 
@@ -44,6 +45,10 @@ const Eleccion = styled.h1`
       margin:auto;
       text-align:center;
       margin: 2rem 0;
+
+      @media(max-width: 550px) { 
+      font-size:1rem;
+    }
       
 `
 

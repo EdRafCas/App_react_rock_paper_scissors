@@ -9,6 +9,11 @@ const ContenedorPrincipal= styled.div`
       flex-direction:column;
       padding: 1em 2em;
       border-radius:5%;
+
+      @media(max-width: 500px) { 
+      justify-content: center;
+      width:auto;
+    }
 `
 
 const TituloContador= styled.h1`

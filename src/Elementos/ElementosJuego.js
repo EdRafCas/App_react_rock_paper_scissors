@@ -7,28 +7,20 @@ import {ReactComponent as ReglasJuego} from './../images/image-rules.svg';
 import tema from '../Tema';
 
 const FondoTriangulo = styled(Triangulo)`
-      height:auto;
+      max-width: 100%;
+
+     @media(max-width: 500px) { 
+           max-width: 50%;
+           min-width:50%;
+      }
 `
-const Papel = styled(LogoPapel)`      
+const Papel = styled(LogoPapel)`     
+ 
 `
 const Piedra = styled(LogoPiedra)`
 `
 const Tijera = styled(LogoTijera)`
 `
-const ContenedorOpcionA= styled.div`
-      display:flex;
-      position:absolute;
-      background: ${tema.GradienteAzul};
-      width: 10rem;
-      height:10rem;
-      border-radius:50%;
-      border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
-      z-index:1;
-      margin-top:-15rem;
-      margin-left:-20rem;
-`
-
 const ContenedorOpciones= styled.div`
       display:flex;
       position: ${(props) => props.OpcionA || props.OpcionB || props.OpcionC ? "absolute"
@@ -39,12 +31,11 @@ const ContenedorOpciones= styled.div`
                               : props.Tijera ? tema.GradienteAmarillo 
                               : props.Vacio ? tema.AzulContador 
                               : "0000"};
-      
       width: 10rem;
       height:10rem;
       border-radius:50%;
       border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
+      box-shadow: 0px 7px 5px 3px rgba(0,0,0,.4);
       z-index:1;
       margin-top:${(props) => props.OpcionA ? "-15rem" 
                               : props.OpcionB ? "15rem" 
@@ -61,34 +52,25 @@ const ContenedorOpciones= styled.div`
             text-decoration:none;
       } 
       a {text-decoration:none;}
+
+      @media(max-width: 500px) { 
+            width: 5rem;
+            height:5rem;
+      margin-top:${(props) => props.OpcionA ? "-10rem" 
+                              : props.OpcionB ? "10rem" 
+                              : props.OpcionC ? "-10rem" 
+                              : props.Resultado ? "auto" 
+                              : "0rem"};
+      margin-left:${(props) => props.OpcionA ? "-12rem" 
+                              : props.OpcionB ? "0rem" 
+                              : props.OpcionC ? "12rem" 
+                              : props.Resultado ? "auto" 
+                              : "0rem"};
+      }
+
+      
                   
 `
 /* ${tema.GradienteAzul} */
-const ContenedorOpcionB= styled.div`
-      display:flex;
-      position:absolute;
-      background: ${tema.GradienteRojo};
-      width: 10rem;
-      height:10rem;
-      border-radius:50%;
-      border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
-      z-index:1;
-      margin-top:15rem;
-      margin-left:0rem;
-`
-const ContenedorOpcionC= styled.div`
-      display:flex;
-      position:absolute;
-      background: ${tema.GradienteAmarillo};
-      width: 10rem;
-      height:10rem;
-      border-radius:50%;
-      border: 1px solid ${tema.Borde};
-      box-shadow: 0px 7px 0px 0px ;
-      z-index:1;
-      margin-top:-15rem;
-      margin-left:20rem;
-`
  
-export {FondoTriangulo, Papel, Piedra, Tijera, ReglasJuego, ContenedorOpcionA, ContenedorOpcionB, ContenedorOpcionC, ContenedorOpciones};
+export {FondoTriangulo, Papel, Piedra, Tijera, ReglasJuego, ContenedorOpciones};

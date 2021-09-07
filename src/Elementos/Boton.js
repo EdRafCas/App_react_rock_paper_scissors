@@ -8,7 +8,8 @@ const Boton = styled(Link)`
       width: 8rem;
       height:8rem;
       background: #fff;
-      box-shadow: 0px 5px inset;
+      /* box-shadow: 0px 1.25rem 2.5rem rgba(0,0,0,.05) */
+      box-shadow: 0px 5px rgba(0,0,0,.3) inset;
       border-radius:50%;
       border: 1px solid ${tema.Borde};
       margin: auto;
@@ -23,6 +24,11 @@ const Boton = styled(Link)`
             height:50%;
             width:auto;
       } 
+      
+      @media(max-width: 500px) { 
+            width: 4rem;
+            height:4rem;
+      }
 `
 const BotonReglas = styled.button`
      background: none; 
