@@ -16,15 +16,16 @@ const ContenedorHeader = styled.div`
       padding:1rem 2rem;
 
       @media(max-width: 550px) { 
-      justify-content: center;
+      justify-content: space-evenly;
       width:100%;
     }
 
 ` 
 const Logotipo = styled(Logo)`
-      @media(max-width: 550px) { 
-            justify-content: center;
-            height:auto;
+            max-width: 100%;
+      @media(max-width: 500px) { 
+           max-width: 20%;
+
       }
 
 `
@@ -35,7 +36,7 @@ const Header = () => {
 
       return ( 
             <ContenedorHeader>
-                  <Logotipo/>
+                  <Logotipo  viewBox="0 0 162 99" width="162" height="99" />
                   <ContenedorContador  />
             </ContenedorHeader> 
        );

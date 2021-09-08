@@ -9,16 +9,20 @@ const ContenedorPrincipal= styled.div`
       flex-direction:column;
       padding: 1em 2em;
       border-radius:5%;
+      justify-content: space-between;
 
-      @media(max-width: 500px) { 
-      justify-content: center;
-      width:auto;
+            @media(max-width: 500px) {
+            width:auto;
+            padding: 0.5em 1em
     }
 `
 
 const TituloContador= styled.h1`
       color: ${tema.AzulContador};
       font-size:1rem;
+            @media(max-width: 500px) { 
+                  font-size: 1rem;
+                  }
       `;
 
 const Contador = styled.p`
@@ -26,6 +30,10 @@ const Contador = styled.p`
       font-size: 3rem;
       font-weight:700;
       margin:auto;
+
+            @media(max-width: 500px) { 
+            font-size: 2rem;
+            }
       `;
 
 const ContenedorContador =  () => {

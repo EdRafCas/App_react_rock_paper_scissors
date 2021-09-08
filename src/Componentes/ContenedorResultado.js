@@ -17,37 +17,68 @@ import {
 const ContenedordelResultado = styled.div`
       display:flex;
       width: 100%;
-      flex-direction:column;
+      flex-direction:row;
       border-radius:0.625rem;
       /* border: 0.25rem solid ${tema.Borde}; */
-      justify-content: space-evenly;
+      justify-content:space-between;
       align-items:center;
       margin-top: 0rem;
-      min-height:70%;
-      
+      min-height:80%;
 
-      @media(max-width: 550px) { 
-      flex-direction:column;
+      @media(max-width: 500px) { 
+            flex-direction:column;
+            justify-content: space-evenly;
+            min-height:80%
     }
      
 
 `
 const Resultado = styled.div`
-      flex-direction:row;
-      width:11rem;
+      display:flex;
+      width:100%;
+      flex-direction:column;
+      justify-content:space-evenly;
       align-items:center;
+
+      @media(max-width: 500px) { 
+      flex-direction:column-reverse;
+    }
+      
 
 `
 
+const ResultadoFinal = styled.div`
+      display:flex;
+      width:100%;
+      flex-direction:column;
+      justify-content:space-evenly;
+      align-items:center;
+      margin:1rem;
+
+      @media(max-width: 500px) { 
+      flex-direction:row;
+      justify-content:center;
+            h1{
+                  font-size:1.2rem;
+            
+      }
+    }
+      
+`
+
 const Eleccion = styled.h1`
+      display:inline-block;
       font-size:2rem;
       color:white;
       margin:auto;
       text-align:center;
       margin: 2rem 0;
 
-      @media(max-width: 550px) { 
+
+      @media(max-width: 500px) { 
       font-size:1rem;
+      margin: 0.5rem 0;
+      
     }
       
 `
@@ -98,12 +129,12 @@ const ResultadoJuego = () => {
                               </Boton>
                         </ContenedorOpciones>
                   }
-                  {resultadoJuego ? <Resultado>
+                  {resultadoJuego ? <ResultadoFinal>
                                           <Eleccion>{resultadoJuego}</Eleccion>
                                           <BotonResultado to="/">
-                                           <h1> P L A Y  A G A I N </h1>
+                                                <h1> P L A Y   A G A I N </h1>
                                           </BotonResultado>
-                                    </Resultado>
+                                    </ResultadoFinal>
                                           
                   :""}
                   {

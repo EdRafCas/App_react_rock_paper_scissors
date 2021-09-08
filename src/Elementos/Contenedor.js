@@ -17,10 +17,11 @@ const Contenedor = styled.div`
     z-index: 100;
  
 
-    @media(max-width: 550px){ /* 950px */
+    @media(max-width: 500px){ /* 950px */
         width: 100%;
         justify-content: space-between;
         margin:0;
+        max-height: auto;
     }
 
 `;

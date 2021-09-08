@@ -22,7 +22,7 @@ const ContenedordelJuego = styled.div`
       align-items:center;
       margin-top: 0rem;
       padding:1rem 2rem;
-      min-height:50%;
+      min-height:60%;
       
       @media(max-width: 500px) { 
             width:375px;

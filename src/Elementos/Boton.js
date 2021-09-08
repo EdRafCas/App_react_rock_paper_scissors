@@ -44,15 +44,14 @@ const BotonResultado = styled(Link)`
       display:flex;
       align-items:center;
       justify-content:center;
-     background: #fff; 
+     background: #fff;
+     width:auto;
      color:black ;
      border-radius:0.625rem;
      border: 0.25rem solid white;
-     width: 100%;
      height:3rem;
      cursor:pointer;
      text-decoration:none;
-     margin: auto;
 
      *{
             font-size:1rem;
@@ -60,6 +59,11 @@ const BotonResultado = styled(Link)`
            
      }
 
+     @media(max-width: 500px) { 
+            margin:0 1rem;
+            height:2rem;
+            border: 0.25rem solid white;
+      }
 `
 
 
