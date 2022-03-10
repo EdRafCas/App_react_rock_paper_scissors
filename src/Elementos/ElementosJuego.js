@@ -10,8 +10,8 @@ const FondoTriangulo = styled(Triangulo)`
       max-width: 100%;
 
      @media(max-width: 500px) { 
-           max-width: 50%;
-           min-width:50%;
+           max-width: 60%;
+           
       }
 `
 const Papel = styled(LogoPapel)`     
@@ -22,6 +22,7 @@ const Piedra = styled(LogoPiedra)`
 const Tijera = styled(LogoTijera)`
 `
 const ContenedorOpciones= styled.div`
+      
       display:flex;
       position: ${(props) => props.OpcionA || props.OpcionB || props.OpcionC ? "absolute"
                   : "auto"
@@ -55,15 +56,15 @@ const ContenedorOpciones= styled.div`
 
       @media(max-width: 500px) { 
             width: 5rem;
-            height:5rem;
-      margin-top:${(props) => props.OpcionA ? "-10rem" 
-                              : props.OpcionB ? "10rem" 
-                              : props.OpcionC ? "-10rem" 
+            height: 5rem;
+      margin-top:${(props) => props.OpcionA ? "-5.5rem" 
+                              : props.OpcionB ? "5.5rem" 
+                              : props.OpcionC ? "-5.5rem" 
                               : props.Resultado ? "auto" 
                               : "0rem"};
-      margin-left:${(props) => props.OpcionA ? "-12rem" 
+      margin-left:${(props) => props.OpcionA ? "-5.5rem" 
                               : props.OpcionB ? "0rem" 
-                              : props.OpcionC ? "12rem" 
+                              : props.OpcionC ? "5.5rem" 
                               : props.Resultado ? "auto" 
                               : "0rem"};
       }

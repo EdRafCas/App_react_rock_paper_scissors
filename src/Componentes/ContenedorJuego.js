@@ -20,7 +20,7 @@ const ContenedordelJuego = styled.div`
       /* border: 0.25rem solid ${tema.Borde}; */
       justify-content: center;
       align-items:center;
-      margin-top: 0rem;
+      margin: 0rem;
       padding:1rem 2rem;
       min-height:60%;
       
