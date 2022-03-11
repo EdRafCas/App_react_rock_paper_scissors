@@ -7,10 +7,13 @@ import {ReactComponent as ReglasJuego} from './../images/image-rules.svg';
 import tema from '../Tema';
 
 const FondoTriangulo = styled(Triangulo)`
+
       max-width: 100%;
+      border: 0.25rem solid ${tema.Borde};
 
      @media(max-width: 500px) { 
-           max-width: 60%;
+           max-width: 70%;
+           height:100%
            
       }
 `
@@ -57,14 +60,26 @@ const ContenedorOpciones= styled.div`
       @media(max-width: 500px) { 
             width: 5rem;
             height: 5rem;
-      margin-top:${(props) => props.OpcionA ? "-5.5rem" 
-                              : props.OpcionB ? "5.5rem" 
-                              : props.OpcionC ? "-5.5rem" 
+      /* margin-top:${(props) => props.OpcionA ? "-8.5rem" 
+                              : props.OpcionB ? "8.5rem" 
+                              : props.OpcionC ? "-8.5rem" 
                               : props.Resultado ? "auto" 
                               : "0rem"};
-      margin-left:${(props) => props.OpcionA ? "-5.5rem" 
+      margin-left:${(props) => props.OpcionA ? "-8.5rem" 
                               : props.OpcionB ? "0rem" 
-                              : props.OpcionC ? "5.5rem" 
+                              : props.OpcionC ? "8.5rem" 
+                              : props.Resultado ? "auto" 
+                              : "0rem"}; */
+                              
+      margin:0;
+      top:${(props) => props.OpcionA ? "0rem" 
+                              : props.OpcionB ? "14rem" 
+                              : props.OpcionC ? "0rem" 
+                              : props.Resultado ? "auto" 
+                              : "0rem"};
+      left:${(props) => props.OpcionA ? "1rem" 
+                              : props.OpcionB ? "9rem" 
+                              : props.OpcionC ? "17rem" 
                               : props.Resultado ? "auto" 
                               : "0rem"};
       }

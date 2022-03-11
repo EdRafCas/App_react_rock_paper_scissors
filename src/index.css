@@ -10,11 +10,12 @@
 
 body {
   background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-  min-height: 100vh;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  overflow:scroll;
 
   
 }
@@ -24,5 +25,6 @@ body {
 #root {
   display: flex;
   width: 100%;
+  max-width:1440px;
   min-width: 375px;
 }

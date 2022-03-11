@@ -13,20 +13,24 @@ import {TotalContadorContext} from './../Contextos/ContadorContext';
 import {Boton, BotonReglas} from './../Elementos/Boton'
 
 const ContenedordelJuego = styled.div`
+      position:relative;
       display:flex;
       flex-direction:column;
-      width: 100%;
+      width: 80%;
       border-radius:0.625rem;
-      /* border: 0.25rem solid ${tema.Borde}; */
+      border: 0.25rem solid ${tema.Borde};
       justify-content: center;
       align-items:center;
       margin: 0rem;
-      padding:1rem 2rem;
-      min-height:60%;
+      padding:0rem 0rem;
+      height:60%;
       
       @media(max-width: 500px) { 
+            /* height:277px;
+            width:273px; */
+            height:277px;
             width:375px;
-           min-width:375px;
+            min-width:375px;
       }
 
 `
