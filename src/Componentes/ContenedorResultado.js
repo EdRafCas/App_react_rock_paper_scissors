@@ -129,14 +129,7 @@ const ResultadoJuego = () => {
                               </Boton>
                         </ContenedorOpciones>
                   }
-                  {resultadoJuego ? <ResultadoFinal>
-                                          <Eleccion>{resultadoJuego}</Eleccion>
-                                          <BotonResultado to="/">
-                                                <h1> P L A Y   A G A I N </h1>
-                                          </BotonResultado>
-                                    </ResultadoFinal>
-                                          
-                  :""}
+                  
                   {
                         seleccionDelCpu === "papel" ? 
                         <Resultado>
@@ -169,6 +162,14 @@ const ResultadoJuego = () => {
                         
                         : ""
                   }
+                  {resultadoJuego ? <ResultadoFinal>
+                                          <Eleccion>{resultadoJuego}</Eleccion>
+                                          <BotonResultado to="/">
+                                                <h1> PLAY   AGAIN </h1>
+                                          </BotonResultado>
+                                    </ResultadoFinal>
+                                          
+                  :""}
 
             </ContenedordelResultado>
        );
