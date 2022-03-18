@@ -53,7 +53,7 @@ const BotonResultado = styled(Link)`
      cursor:pointer;
      text-decoration:none;
 
-     *{
+     h1{
             font-size:1rem;
             color:${tema.AzulContador}
            

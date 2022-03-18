@@ -15,7 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Barlow Semi Condensed', sans-serif;
-  overflow:scroll;
+  overflow:hidden;
 
   
 }

@@ -18,7 +18,7 @@ const ContenedordelJuego = styled.div`
       flex-direction:column;
       width: 80%;
       border-radius:0.625rem;
-      border: 0.25rem solid ${tema.Borde};
+      /* border: 0.25rem solid ${tema.Borde}; */
       justify-content: center;
       align-items:center;
       margin: 0rem;

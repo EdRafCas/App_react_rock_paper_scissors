@@ -17,10 +17,10 @@ import {
 const ContenedordelResultado = styled.div`
       display:flex;
       width: 100%;
-      flex-direction:row;
+      flex-direction:column;
       border-radius:0.625rem;
       /* border: 0.25rem solid ${tema.Borde}; */
-      justify-content:space-between;
+      justify-content:space-evenly;
       align-items:center;
       margin-top: 0rem;
       min-height:80%;
@@ -31,6 +31,18 @@ const ContenedordelResultado = styled.div`
             min-height:80%
     }
      
+
+`
+
+const ContenedorElecciones =styled.div`
+      /* border: 0.25rem solid ${tema.Borde}; */
+      justify-content:center;
+      display:flex;
+      width: 100%;
+      flex-direction:row;
+      margin:0;
+      padding:0;
+
 
 `
 const Resultado = styled.div`
@@ -92,7 +104,7 @@ const ResultadoJuego = () => {
 
       return ( 
             <ContenedordelResultado>
-                  
+                  <ContenedorElecciones>
                   {
                         seleccionJugador === "papel" ?
                         <Resultado>
@@ -162,6 +174,8 @@ const ResultadoJuego = () => {
                         
                         : ""
                   }
+                  </ContenedorElecciones>
+                  
                   {resultadoJuego ? <ResultadoFinal>
                                           <Eleccion>{resultadoJuego}</Eleccion>
                                           <BotonResultado to="/">

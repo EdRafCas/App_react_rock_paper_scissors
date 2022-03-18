@@ -9,7 +9,7 @@ import tema from '../Tema';
 const FondoTriangulo = styled(Triangulo)`
 
       max-width: 100%;
-      border: 0.25rem solid ${tema.Borde};
+      /* border: 0.25rem solid ${tema.Borde}; */
 
      @media(max-width: 500px) { 
            max-width: 70%;
